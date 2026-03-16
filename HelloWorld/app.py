@@ -39,5 +39,7 @@ print(course_name)
 first_name = "Shay"
 last_name = "Miya"
 #full_name = first_name + " " + last_name
-full_name = f"{first_name} {last_name}" # f"{x} {y}" = x + " " + y HOX! the amount of spaces matters!
+full_name = f"{first_name} {last_name}" # formatted string: f"{x} {y}" = x + " " + y HOX! the amount of spaces matters!
+print(full_name)
+full_name = f"{len(first_name) * 2} {message}" # you can put any expression between the prackets
 print(full_name)
