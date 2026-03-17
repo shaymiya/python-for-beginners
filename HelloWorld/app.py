@@ -32,7 +32,7 @@ print(course_name[:])
 # \'
 # \\
 # \n <- new line
-course_name = "\"Python\" Programming"
+course_name = "   \"Python\" Programming"
 print(course_name)
 
 # "parsing" text
@@ -43,3 +43,21 @@ full_name = f"{first_name} {last_name}" # formatted string: f"{x} {y}" = x + " "
 print(full_name)
 full_name = f"{len(first_name) * 2} {message}" # you can put any expression between the prackets
 print(full_name)
+
+# everything in python is an object!
+print(course_name.upper())
+print(course_name.lower())
+print(course_name.title())
+print(course_name.strip()) # delete white spaces from the start of the string
+print(course_name.find("pro")) # returns -1 if the string isn't found
+print(course_name.find("Pro")) # returns the index of where if the string is found
+print(course_name.replace("P", "J"))
+print("Pro" in course_name) # checks if the characters exists in string -> returns boolean
+print("Swift" not in course_name) # returns a boolean
+
+# numbers in python
+x = 1
+x = 1.1
+x = 1 + 2j # a + bi python understands complex numbers, such as imaginary!
+
+print
