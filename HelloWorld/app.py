@@ -60,4 +60,15 @@ x = 1
 x = 1.1
 x = 1 + 2j # a + bi python understands complex numbers, such as imaginary!
 
-print
+print(10 + 3)
+print(10 - 3)
+print(10 * 3)
+print(10 / 3)
+print(10 // 3) # double // converts the value into integer
+print(10 % 3)
+print(10 ** 3) # exponent
+
+# augmented assignment operator
+x = 10
+x = x + 3
+x += 3 # <- this one
