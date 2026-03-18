@@ -22,4 +22,41 @@ for x in range (5):
     for y in range(3):
         print(f"({x}, {y})")
 
-# iterables
+# iterables = an object that can be iterated over bruh CAN BE ALSO A STRING?? or a custom object??
+print(type(5))
+print(type(range(5))) # range is its own object
+
+for x in "Python":
+    print(x)
+
+for x in [1, 2, 3, 4]:
+    print(x)
+
+# while-loops
+number = 100
+while number > 0:
+    print(number)
+    number //= 2
+
+command = ""
+while command.lower() != "quit": # allows user to type quit in any way
+    command = input(">")
+    print("ECHO", command)
+
+# infinite loop
+while True:
+    command = input(">")
+    print("ECHO", command)
+    if command.lower() == "quit":
+        break
+
+# EXERCISE: Display even numbers between 1-10 and count how many there are
+
+counter = 0
+
+for number in range(1, 10):
+    if number % 2 == 0:
+        counter += 1
+        print(number)
+# print("We have", counter, "even numbers")
+print(f"We have {counter} even numbers") # remember to use formatted strings!
