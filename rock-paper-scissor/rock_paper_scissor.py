@@ -67,6 +67,7 @@ while True:
         player_input = input('Rock, paper, or scissors? (r/p/s): ')
         if player_input == "r" or player_input == "p" or player_input == "s":
             player_chose(player_input)
+            check_winner(player_input, computer_chose())
             break
         else:
             print('Invalid choice!')
