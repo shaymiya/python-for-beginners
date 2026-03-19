@@ -10,7 +10,7 @@
 import random
 
 # generate a random number 1-100 for the game
-answer = random.randint(1, 100)
+number_to_guess = random.randint(1, 100)
 
 # use while loop for the game loop
 while True:
@@ -19,13 +19,13 @@ while True:
 
     # check if the input is valid (isdigit() for integers)
     if guess.isdigit():
-        if answer == int(guess):
-            print("Congratulations! You guessed the number.")
-            break
-        elif answer < int(guess):
+        if number_to_guess > int(guess):
+            print("Too low!")
+        elif number_to_guess < int(guess):
             print("Too high!")
         else:
-            print("Too low!")
+            print("Congratulations! You guessed the number.")
+            break
     # if the input is anything else than an integer, print the following:
     else: 
         print("Please enter a valid number")
