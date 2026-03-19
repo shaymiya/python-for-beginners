@@ -11,18 +11,18 @@ user_input = "" # store the user input
 
 # make a simple function for rolling the dice
 def roll_dice():
-    dice1 = random.randint(1, 6)
-    dice2 = random.randint(1, 6)
-    print(f"({dice1}, {dice2})")
+    die1 = random.randint(1, 6)
+    die2 = random.randint(1, 6)
+    print(f"({die1}, {die2})")
 
 # use infinite while loop for the game core loop
 while True:
-    user_input = input("Roll the dice? (y/n): ")
+    user_input = input("Roll the dice? (y/n): ").lower() # user input can be converted here too!
     # check if the input is valid
-    if user_input.lower() == "y":
+    if user_input == "y":
         # roll the dice
         roll_dice()
-    elif user_input.lower() == "n":
+    elif user_input == "n":
         # if n, end the game
         break
     else:
