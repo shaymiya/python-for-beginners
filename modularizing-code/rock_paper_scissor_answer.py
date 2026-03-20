@@ -1,12 +1,16 @@
 # MORE ELOQUENT SOLUTION!
 import random
 
-# DRY-principle = Don't Repeat Yourself
+# use UPPER CASE LETTERS to define constants!
+ROCK = 'r'
+SCISSORS = 's'
+PAPER = 'p'
 
-# in python we have DICTIONARIES
-# key -> value
-emojis = { 'r': '🪨', 's': '✂️', 'p': '📜'} # make a dictionary for emojis
-choices = ('r', 'p', 's') # make a list of valid choices! [] = open list, () = read only list!!
+# use ctrl + d to select all instances of 'r' + esc x 2 to cancel multi editing
+
+# DRY-principle = Don't Repeat Yourself
+emojis = { ROCK: '🪨', SCISSORS: '✂️', PAPER: '📜'} # make a dictionary for emojis
+choices = tuple(emojis.keys()) # make a list from a tuple of emoji dictionary!
 
 def get_user_choice():
     while True:
@@ -24,9 +28,9 @@ def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         print('Tie!')
     elif (
-        (user_choice == 'r' and computer_choice == 's') or
-        (user_choice == 's' and computer_choice == 'r') or
-        (user_choice == 'p' and computer_choice == 'r')):
+        (user_choice == ROCK and computer_choice == SCISSORS) or
+        (user_choice == SCISSORS and computer_choice == ROCK) or
+        (user_choice == PAPER and computer_choice == ROCK)):
         print('You win!')
     else:
         print('You lose')
