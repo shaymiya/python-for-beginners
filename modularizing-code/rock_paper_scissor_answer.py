@@ -1,23 +1,26 @@
 # MORE ELOQUENT SOLUTION!
 import random
 
+# DRY-principle = Don't Repeat Yourself
+
 # in python we have DICTIONARIES
 # key -> value
 emojis = { 'r': '🪨', 's': '✂️', 'p': '📜'} # make a dictionary for emojis
 choices = ('r', 'p', 's') # make a list of valid choices! [] = open list, () = read only list!!
 
-while True:
-    user_choice = input('Rock, paper, or scissors? (r/p/s): ').lower()
-    if user_choice not in choices:
-        print("Invalid choice!")
-        continue # return back to the start of the loop!
+def get_user_choice():
+    while True:
+        user_choice = input('Rock, paper, or scissors? (r/p/s): ').lower()
+        if user_choice in choices:
+            return user_choice # acts as a break!
+        else:
+            print("Invalid choice!")
 
-    # with this the random picks one of the choices on the predefined list! SO CLEVER
-    computer_choice = random.choice(choices) 
-
+def display_choices(user_choice, computer_choice):
     print(f'You chose {emojis[user_choice]}')
     print(f'Computer chose {emojis[computer_choice]}')
 
+def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         print('Tie!')
     elif (
@@ -28,10 +31,23 @@ while True:
     else:
         print('You lose')
 
-    should_continue = input('Continue? (y/n): ').lower()
-    if should_continue == 'n':
-        break
-    
+def play_game():
+    while True:
+        user_choice = get_user_choice()
+        
+        # with this the random picks one of the choices on the predefined list! SO CLEVER
+        computer_choice = random.choice(choices) 
+
+        display_choices(user_choice, computer_choice)
+
+        determine_winner(user_choice, computer_choice)
+
+        should_continue = input('Continue? (y/n): ').lower()
+        if should_continue == 'n':
+            break
+
+play_game()
+
 # -------------------------------
 # Ask the user to make a choice
 # If choice is not valid
